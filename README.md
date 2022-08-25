@@ -19,7 +19,7 @@ Ceci est une initiation à l'utilisation des techniques de data collection
 
 - CREATION DE LA BASE MYSQL
 
-- CREATION DE LA TABLE peopel AVEC SQLALCHEMY
+- CREATION DE LA TABLE people AVEC SQLALCHEMY
 
 -  AJOUT DES DONNEES  AVEC SQLALCHEMY
 
@@ -41,7 +41,19 @@ Ceci est une initiation à l'utilisation des techniques de data collection
 
 > py COURSE/MODULE5/exo.py 
 
-#### créer la base test et la table people dans mysql 
+#### créer la base scraping et la table people dans mysql 
+
+## Paraméter les paramètres de données sur mysql 
+
+> ouvri le fichier .env (COURSE\MODULE5\fastapi\.env)
+
+- Mettez vos paramètres de connexion sur mysql
+
+	- USER={votre user}
+	- PASSWORD={VOTRE PASSWORD}
+
+> NE PAS TOUCHER DATABASE DE PREFERENCE
+ - DATABASE=SCRAPING
 
 ### exexuter le fichier create_db.py 
 

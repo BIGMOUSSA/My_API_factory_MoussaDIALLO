@@ -4,9 +4,10 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from models import People
 from sqlalchemy.ext.declarative import declarative_base
-#engine = create_engine()
+from database import sql_database_url
 import pandas as pd
-sql_database_url = 'mysql://root:root@localhost:3306/scraping'
+
+
 engine = create_engine(
     sql_database_url,echo=False)
 
@@ -15,7 +16,7 @@ session=Session()
 
 Base = declarative_base()
 
-#Base.metadata.create_all(engine)
+
 
 empdata = pd.read_csv("COURSE/DATABASES/Final_data.csv",index_col=0, delimiter = ',')
 empdata.fillna("",inplace=True)
@@ -23,12 +24,12 @@ empdata.fillna("",inplace=True)
 
 
 def GoSaveData(files:pd.DataFrame):
-    # CONNECTION A LA BASE DE DONNEES SQLITE 
+
     #loop through the data frame
+    
     for i,row in files.iterrows():
         data= tuple(row)
-        #sql = "INSERT INTO people (name,phone,email,address,latlng,salary,age,Device,salary_XOF,Coontry,Flag) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-        #c.execute(sql, tuple(row))
+
         student1 = People(
             name=data[0],
             phone=data[1],
@@ -46,5 +47,5 @@ def GoSaveData(files:pd.DataFrame):
         print("Record inserted")
 
 GoSaveData(empdata)
-#print(empdata.head())
+
 
