@@ -18,8 +18,8 @@ Base = declarative_base()
 
 
 
-empdata = pd.read_csv("COURSE/DATABASES/Final_data.csv",index_col=0, delimiter = ',')
-empdata.fillna("",inplace=True)
+my_data = pd.read_csv("COURSE/DATABASES/Final_data.csv",index_col=0, delimiter = ',')
+my_data.fillna("",inplace=True)
 
 
 
@@ -30,7 +30,7 @@ def GoSaveData(files:pd.DataFrame):
     for i,row in files.iterrows():
         data= tuple(row)
 
-        student1 = People(
+        people1 = People(
             name=data[0],
             phone=data[1],
             email=data[2],
@@ -42,10 +42,10 @@ def GoSaveData(files:pd.DataFrame):
             salary_XOF=data[8],
             Coontry=data[9],
             Flag=data[10])
-        session.add(student1)
+        session.add(people1)
         session.commit()
         print("Record inserted")
 
-GoSaveData(empdata)
+GoSaveData(my_data)
 
 

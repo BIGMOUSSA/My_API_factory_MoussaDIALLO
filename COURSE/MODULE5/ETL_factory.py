@@ -8,6 +8,7 @@ from libraries.Contries import DataSouper
 import pandas as pd
 import random
 import os
+import time
 
 def ConcatData(CSV : list, JSON : list , HTML: list ):
     return [*CSV,*JSON,*HTML]
@@ -63,25 +64,63 @@ def StoreIndCSV(Liste):
 
 def ScrapFactory() :
     print(Utils.divider()+"Recupérartion des donnnées....")
+    start = time.time()
     CSV=CsvFactory.main()
     JSON = JsonFactory.main()
     HTML = HtmlFactory.main()
-    print(Utils.divider()+"Recupérartion des donnnées : done")
+    end = time.time()
+    print(Utils.divider()+"Recupérartion des donnnées : done in ", round((end - start))/60," mnt")
+    ####################################################################
     print(Utils.divider())
     print(Utils.divider()+"Concaténation des base...")
+    start = time.time()
     data = ConcatData(CSV, JSON, HTML)
-    print(Utils.divider()+"Concaténation des base : done")
+    end = time.time()
+    print(Utils.divider()+"Concaténation des base :fait en : ", round((end - start))/60," mnt")
+
+    ####################################################################
+
     print(Utils.divider())
     print(Utils.divider()+"Ajout aleatoire des devises des base...")
+    start = time.time()
     data01=AddRandomDevice(data)
+    end = time.time()
+    print(Utils.divider()+"Ajout aleatoire des devises des base :fait en : ", round((end - start))/60," mnt")
+
+    ####################################################################
+
     print(Utils.divider()+"convertion des salaire en XOF devises des base...")
+    start = time.time()
     data02=ConvertToXOF(data01)
+    end = time.time()
+    print(Utils.divider()+"convertion des salaire en XOF devises des base : done in : ", round((end - start))/60," mnt")
+
+    #######################################################################
+
+    print(Utils.divider())
     print(Utils.divider()+"Ajout aleatoire des pays...")
+    start = time.time()
     data03=AdddingRandomContries(data02)
+    end = time.time()
+    print(Utils.divider()+"Ajout aleatoire des pays : done in : ", round((end - start))/60," mnt")
+
+    #######################################################################
+
     print(Utils.divider()+"Ajout des liens des drapeaux de chaque pays...")
+    start = time.time()
     data04=AdddingFlag(data03)
+    end = time.time()
+    print(Utils.divider()+"Ajout des liens des drapeaux de chaque pays : done in : ", round((end - start))/60," mnt")
+
+    ########################################################################
+
     print(Utils.divider()+"Stockage de la base sous format csv...")
+    start = time.time()
     StoreIndCSV(data04)
+    end = time.time()
+    print(Utils.divider()+"Stockage de la base sous format csv : done in : ", round((end - start))/60," mnt")
+
+    #######################################################################
 
 
 
@@ -89,7 +128,7 @@ def ScrapFactory() :
 if __name__ == '__main__':
     if os.path.exists('COURSE/DATABASES/Final_data.csv') :
         print("exist")
-        rep=input("Les données existent deja voulez vous relancer le scrapinge (Oui:O/o; Non:N/n): ")
+        rep=input("Les données existent deja voulez vous relancer le scrapinge (temps d'exécution estimé à 20 mnt) : (Oui:O/o; Non:N/n): ")
         if rep.lower() == 'o' :
             ScrapFactory()
         else :
