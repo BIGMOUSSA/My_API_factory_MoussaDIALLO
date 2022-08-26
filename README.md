@@ -42,6 +42,7 @@ Ceci est une initiation à l'utilisation des techniques de data collection
 > python COURSE\MODULE5\ETL_factory.py
 
 **********************
+
 Les données existent deja voulez vous relancer le scrapinge (temps d'exécution estimé à 20 mnt) : (Oui:O/o; Non:N/n): o
 ------------------------------------------------------Recupérartion des donnnées....
 ------------------------------------------------------Recupérartion des donnnées : done in  0.0  mnt
@@ -60,6 +61,8 @@ Les données existent deja voulez vous relancer le scrapinge (temps d'exécution
 ------------------------------------------------------Ajout des liens des drapeaux de chaque pays : done in :  0.06666666666666667  mnt
 ------------------------------------------------------Stockage de la base sous format csv...
 ------------------------------------------------------Stockage de la base sous format csv : done in :  0.0  mnt
+
+
 ***************************************************************
 
 
