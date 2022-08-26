@@ -41,29 +41,7 @@ Ceci est une initiation à l'utilisation des techniques de data collection
 
 > python COURSE\MODULE5\ETL_factory.py
 
-**********************
 
-Les données existent deja voulez vous relancer le scrapinge (temps d'exécution estimé à 20 mnt) : (Oui:O/o; Non:N/n): o
-------------------------------------------------------Recupérartion des donnnées....
-------------------------------------------------------Recupérartion des donnnées : done in  0.0  mnt
-------------------------------------------------------
-------------------------------------------------------Concaténation des base...
-------------------------------------------------------Concaténation des base :fait en :  0.0  mnt
-------------------------------------------------------
-------------------------------------------------------Ajout aleatoire des devises des base...
-------------------------------------------------------Ajout aleatoire des devises des base :fait en :  0.0  mnt
-------------------------------------------------------convertion des salaire en XOF devises des base...
-------------------------------------------------------convertion des salaire en XOF devises des base : done in :  7.233333333333333  mnt
-------------------------------------------------------
-------------------------------------------------------Ajout aleatoire des pays...
-------------------------------------------------------Ajout aleatoire des pays : done in :  12.0  mnt
-------------------------------------------------------Ajout des liens des drapeaux de chaque pays...
-------------------------------------------------------Ajout des liens des drapeaux de chaque pays : done in :  0.06666666666666667  mnt
-------------------------------------------------------Stockage de la base sous format csv...
-------------------------------------------------------Stockage de la base sous format csv : done in :  0.0  mnt
-
-
-***************************************************************
 
 
 #### créer la base scraping et la table people dans mysql 
